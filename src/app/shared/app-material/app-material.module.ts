@@ -3,6 +3,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -12,7 +14,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatCardModule,
     MatTableModule,
     MatToolbarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatButtonModule
   ]
 })
 export class AppMaterialModule { }
