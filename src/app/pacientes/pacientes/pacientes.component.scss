@@ -6,3 +6,11 @@ table {
   margin-left: 15%;
   width: 70%;
 }
+
+.carregando-spinner{
+  padding: 25px;
+  background: rgba($color: #d8d8d8, $alpha: 1.0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

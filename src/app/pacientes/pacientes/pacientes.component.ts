@@ -11,11 +11,11 @@ import { PacientesService } from './../services/pacientes.service';
 })
 export class PacientesComponent implements OnInit {
 
-  pacientes: Observable<Paciente[]>;
+  pacientes$: Observable<Paciente[]>;
   displayedColumns = ['nome','cpf','endereco','telefone'];
 
   constructor(private pacientesService: PacientesService) {
-    this.pacientes = this.pacientesService.list();
+    this.pacientes$ = this.pacientesService.list();
 
   }
 

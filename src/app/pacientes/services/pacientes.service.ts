@@ -1,23 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tap } from 'rxjs';
+import { delay, first, tap } from 'rxjs';
 
 import { Paciente } from './../model/paciente';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PacientesService {
 
   private readonly API = './././assets/pacientes.json';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-  list(){
+  list() {
     return this.httpClient.get<Paciente[]>(this.API)
     .pipe(
-      tap( pacientes => console.log(pacientes))
-    )
-
+      first(),
+      delay(5000),
+      tap((pacientes => console.log(pacientes))
+    ));
   }
 }
