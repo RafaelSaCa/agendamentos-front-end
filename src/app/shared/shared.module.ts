@@ -6,9 +6,11 @@ import { ErrorDialogComponent } from './components/error-dialog/error-dialog.com
 
 
 
+
 @NgModule({
   declarations: [
-   ErrorDialogComponent
+   ErrorDialogComponent,
+
   ],
   imports: [
     CommonModule,
