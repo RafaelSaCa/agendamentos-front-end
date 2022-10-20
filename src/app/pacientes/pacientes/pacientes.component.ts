@@ -5,6 +5,7 @@ import { catchError, Observable, of } from 'rxjs';
 
 import { Paciente } from './../model/paciente';
 import { PacientesService } from './../services/pacientes.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-pacientes',
@@ -14,11 +15,13 @@ import { PacientesService } from './../services/pacientes.service';
 export class PacientesComponent implements OnInit {
 
   pacientes$: Observable<Paciente[]>;
-  displayedColumns = ['id','nome','cpf','endereco','telefone'];
+  displayedColumns = ['id','nome','cpf','endereco','telefone', 'actions'];
 
   constructor(
     private pacientesService: PacientesService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router,
+    private route: ActivatedRoute
     ) {
     this.pacientes$ = this.pacientesService.list()
     .pipe(
@@ -37,6 +40,10 @@ export class PacientesComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  onAdd(){
+    this.router.navigate(['new'],{relativeTo: this.route});
+  }
 
 
 }
