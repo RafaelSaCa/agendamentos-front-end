@@ -21,4 +21,10 @@ export class PacientesService {
       tap((pacientes => console.log(pacientes))
     ));
   }
+
+  save(paciente: Paciente ){
+    return this.httpClient.post<Paciente>(this.API, paciente).pipe(first());
+  }
+
+
 }
